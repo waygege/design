@@ -1,0 +1,51 @@
+###添加餐厅
+POST localhost:8080/restaurant/insertRestaurant
+Content-Type: application/json
+
+{
+  "name": "餐馆名",
+  "latitude": 32.01515,
+  "longitude": 32.015466,
+  "contactPhone": "15727551385",
+  "address": "地址",
+  "businessHours": "8",
+  "lastOrderTime": "2019-12-09 22:00:00"
+}
+###
+
+###查询餐厅
+GET localhost:8080/restaurant/searchRestaurants
+Content-Type: application/json
+
+{
+  "name": "餐馆名",
+  "pageExample": {
+    "pageNumber": 1,
+    "pageSize": 10
+  }
+}
+###
+
+###更新餐厅信息
+PUT localhost:8080/restaurant/updateRestaurant
+Content-Type: application/json
+
+{
+  "id": 33,
+  "name": "餐馆名",
+  "latitude": 32.01515,
+  "longitude": 32.015466,
+  "contactPhone": "15727551385",
+  "address": "地址",
+  "businessHours": "8",
+  "lastOrderTime": "2019-12-09 22:00:00"
+}
+###
+
+###删除餐厅
+DELETE localhost:8080/restaurant/deleteRestaurant?id=34
+
+###
+
+
+

@@ -1,0 +1,18 @@
+###给用户发放优惠卷()
+PUT localhost:8080/couponsDetails/sendCouponsDetails?id=65
+
+
+
+###
+
+###核销用户优惠卷()
+PUT localhost:8080/couponsDetails/updateCouponsDetails
+Content-Type: application/json
+
+
+
+###查看用户优惠卷(用这个测试不了因为存在用户的Cookie)
+GET  localhost:8080/couponsDetails/findAllCouponsDetails
+
+
+###

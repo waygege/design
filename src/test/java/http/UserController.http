@@ -1,0 +1,87 @@
+
+###登录
+POST  localhost:8080/doLogin?username=xu&password=123
+Content-Type: application/json
+
+
+
+###
+###注册
+POST localhost:8080/register
+Content-Type: application/json
+
+{
+
+    "username": "qq",
+    "currentPassword": "123",
+    "salt": "123",
+    "phone": "15727551381",
+    "avatar": "",
+    "birthday": "1998-01-05",
+    "email": "2219376987@qq.com",
+    "starus": "启用",
+    "invitationCode": "",
+    "level": "1",
+    "registerTime": "",
+    "restaurantId": "1",
+    "integral": 0
+
+}
+###
+###批量启用和禁用
+PUT http://localhost:8080/updateUserStatus?ids=404322608205529088&ids=404322466807152640&status=启用
+
+
+
+###
+###删除用户
+DELETE localhost:8080/deleteUser?ids=404322429062610944
+Content-Type: application/json
+
+###
+
+###手机验证码登录
+POST localhost:8080/phoneLogin?phone=15727551385&captcha=10979
+
+###
+
+###发送验证码
+POST localhost:8080/sendCaptcha?phone=15727551385
+
+###
+
+###更新用户
+PUT localhost:8080/updateUser
+Content-Type: application/json
+
+{
+  "id": 404322608205529088,
+  "username": "wei",
+  "currentPassword": "1234",
+  "salt": "123",
+  "phone": "15727551389",
+  "avatar": "",
+  "birthday": "1998-01-05",
+  "email": "2219376987@qq.com",
+  "starus": "启用",
+  "invitationCode": "",
+  "level": "1",
+  "registerTime": "",
+  "restaurantId": "1",
+  "integral": 0
+}
+###
+
+###条件查询用户
+GET localhost:8080/searchUsers
+Content-Type: application/json
+
+{
+
+  "pageExample": {
+    "pageNumber": 1,
+    "pageSize": 10
+  }
+}
+
+###

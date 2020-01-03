@@ -1,0 +1,35 @@
+###添加活动类型
+POST localhost:8080/activityType/insertActivityType
+Content-Type:  application/json
+
+{
+
+  "activityTypeName": "活动类型"
+}
+
+###
+###删除活动类型
+DELETE localhost:8080/activityType/deleteActivityType?id=27
+
+###
+###更新活动类型
+PUT localhost:8080/activityType/updateActivityType
+Content-Type: application/json
+
+{
+  "id":28,
+  "activityTypeName":"类型"
+}
+###
+###查询活动类型
+GET localhost:8080/activityType/findActivitys
+Content-Type: application/json
+
+{
+  "pageExample": {
+    "pageNumber": 1,
+    "pageSize": 10
+  }
+}
+
+###

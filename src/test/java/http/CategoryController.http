@@ -1,0 +1,42 @@
+
+### 添加分类
+POST localhost:8080/category/insertCategory
+Content-Type: application/json
+
+{
+  "name": "分类",
+  "icon": "图标",
+  "positon": 1,
+  "categoryId": "0"
+}
+
+###
+###删除分类
+DELETE localhost:8080/category/deleteCategory?id=24
+
+###
+###更新分类
+PUT localhost:8080/category/updateCategory
+Content-Type: application/json
+
+{
+  "id":25,
+  "name":"名字",
+  "icon":"图标",
+  "position":1,
+  "categoryId": 1
+}
+
+###
+###查找分类
+GET  localhost:8080/category/findCategorys
+Content-Type: application/json
+
+{
+  "categoryId": 1,
+  "pageExample": {
+    "pageNumber": 1,
+    "pageSize": 10
+  }
+}
+###

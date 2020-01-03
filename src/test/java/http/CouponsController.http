@@ -1,0 +1,68 @@
+###添加优惠卷
+POST localhost:8080/coupons/insertCoupons
+Content-Type: application/json
+
+{
+  "couponsName": "优惠卷名",
+  "couponDescription": "优惠卷描述",
+  "couponsType": "优惠卷类型",
+  "status": "",
+  "integration": "10",
+  "rules": "使用规则",
+  "couponsCategory": "优惠卷种类",
+  "startTime": "2019-12-18 14:40:28",
+  "endTime": "2019-12-30 14:40:28"
+}
+
+###
+
+###更新优惠卷
+PUT localhost:8080/coupons/updateCoupons
+Content-Type: application/json
+
+{
+  "id": "38",
+  "couponsName": "优惠卷名",
+  "couponDescription": "优惠卷描述",
+  "couponsType": "优惠卷类型",
+  "status": "上架",
+  "integration": "10",
+  "rules": "使用规则",
+  "couponsCategory": "优惠卷种类",
+  "startTime": "2019-12-18 14:40:28",
+  "endTime": "2019-12-30 14:40:28"
+}
+
+###
+
+###删除优惠卷
+DELETE localhost:8080/coupons/deleteCoupons?ids=41&ids=42
+
+###
+
+
+###上下架优惠卷
+PUT  localhost:8080/coupons/upOrDownCoupons?id=38 &status=已上架
+
+###
+
+
+GET  localhost:8080/coupons/findCoudons
+Content-Type: application/json
+
+{
+  "couponsName": "优惠卷名",
+  "startTime": "2019-12-18 14:40:28",
+  "endTime": "2019-12-30 14:40:28"
+}
+
+###
+###发放优惠卷
+POST localhost:8080/coupons/sendCouponsDetails
+Content-Type: application/json
+
+{
+  "id":38,
+  "issueTotal": 10
+}
+###

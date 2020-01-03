@@ -1,0 +1,44 @@
+###添加菜品
+POST localhost:8080/dish/insertDish
+Content-Type: application/json
+
+{
+  "title": "麻辣香锅",
+  "status": "1",
+  "image": "照片",
+  "type": "菜品",
+  "startDateTime": "2019-12-18 14:40:28",
+  "endDateTime": "2019-12-20 14:40:28",
+  "subtitle": "香锅",
+  "salePrice": "38",
+  "originalPrice": "20",
+  "description": "辣",
+  "usageRule": "11",
+  "categoryId": "2",
+  "sort": "1",
+  "restaurantId": "1"
+}
+###
+###条件查询（分页）
+GET localhost:8080/dish/searchDishs
+Content-Type: application/json
+
+{
+  "title": "麻辣",
+  "pageExample": {
+    "pageNumber": 1,
+    "pageSize": 10
+  }
+}
+
+###
+###批量删除菜品
+DELETE localhost:8080/dish/deleteDishs?ids=14&ids=15&ids=16&ids=17
+
+###
+
+###上架
+POST localhost:8080/dish/updateDishsStatus?ids=18&ids=19&status=上架
+
+###
+
