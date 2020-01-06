@@ -1,6 +1,8 @@
 package com.ecut.design.Model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -74,17 +76,23 @@ public class Coupons {
      * 发放总数
      * */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private Integer issueTotal;
     /*
      * 领取总数
      * */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private Integer receivedTotal;
 
     /*
      * 使用总数
      * */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private Integer usedTotal;
 
 
@@ -113,17 +121,25 @@ public class Coupons {
      * */
 
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private List<Long> restaurants;
 
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private Long restaurantId;
     /*
      * 赠送的用户
      * */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private List<User> users;
 
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private PageExample pageExample;
 
     public Long getId () {

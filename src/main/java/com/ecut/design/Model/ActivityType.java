@@ -1,6 +1,9 @@
 package com.ecut.design.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -19,6 +22,8 @@ public class ActivityType implements Serializable {
     private String activityTypeName;
 
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private PageExample pageExample;
 
     public Long getId () {

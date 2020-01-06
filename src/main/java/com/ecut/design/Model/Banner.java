@@ -1,6 +1,8 @@
 package com.ecut.design.Model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -96,13 +98,19 @@ public class Banner {
          * */
 
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
         private List<User> users;
 
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
         private List<Long> userIds;
 
 
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
        private  PageExample pageExample;
 
 

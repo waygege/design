@@ -3,6 +3,8 @@ package com.ecut.design.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 
@@ -82,6 +84,8 @@ public class Dish implements Serializable {
      */
 
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private Category category;
     /**
      * 排序
@@ -96,9 +100,13 @@ public class Dish implements Serializable {
      * 参观对象
      */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private Restaurant  restaurant;
 
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private PageExample pageExample;
 
     public Long getId () {

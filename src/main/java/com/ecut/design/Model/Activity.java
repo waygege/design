@@ -1,6 +1,8 @@
 package com.ecut.design.Model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -33,6 +35,8 @@ public class Activity implements Serializable {
      * 活动类型
      */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private ActivityType activityType;
     /**
      * 活动状态
@@ -60,9 +64,13 @@ public class Activity implements Serializable {
      * 选项
      */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private List<Options> optionsSet;
 
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private PageExample pageExample;
 
     public Long getId () {

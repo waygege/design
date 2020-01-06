@@ -4,6 +4,8 @@ package com.ecut.design.Model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 
@@ -53,22 +55,30 @@ public class Evaluate {
      */
     @Transient
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private LocalDateTime commentStartTime;
     /**
      *搜索评价结束时间
      */
     @Transient
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private LocalDateTime commentEndTime;
     /**
      * 评价用户
      */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private User user;
     /**
      * 评价餐厅
      */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private  Restaurant restaurant;
 
     public Long getId () {

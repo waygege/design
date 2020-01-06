@@ -1,5 +1,8 @@
 package com.ecut.design.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
@@ -22,17 +25,23 @@ public class Sign {
          *报名的用户
          */
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
         private User user;
 
         /**
          * 报名的用户名
          */
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
         private String name;
         /**
          * 报名的用户手机号
          */
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
         private String phone;
 
 
@@ -40,6 +49,8 @@ public class Sign {
          * 选项信息
          */
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
         private List<SignOptions> signOptions;
         /**
          * 活动Id
@@ -52,11 +63,15 @@ public class Sign {
          *
          */
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
         private String activityName;
         /**
          * 活动开始时间
          */
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
         private LocalDate activityStart;
 
 
@@ -64,12 +79,16 @@ public class Sign {
          * 活动结束时间
          */
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
         private LocalDate activityEnd;
         /**
          * 活动对象
          */
 
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
         private Activity activity;
 
         /**

@@ -1,5 +1,8 @@
 package com.ecut.design.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,6 +22,8 @@ public class Article {
     private String aboutUs;
 
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private PageExample pageExample;
 
     public Long getId () {

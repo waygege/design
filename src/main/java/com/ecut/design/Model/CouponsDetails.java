@@ -1,6 +1,9 @@
 package com.ecut.design.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -65,50 +68,68 @@ public class CouponsDetails {
      * 赠送数量
      * */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private Long amount;
 
     /**
      * 赠送的所有用户
      */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private List<Long> userIds;
     /*
      * 优惠卷名称
      * */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private String couponsName;
 
     /*
      * 优惠卷说明
      * */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private String couponDescription;
 
     /*
      * 使用规则
      * */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private String rules;
 
     /*
      * 优惠卷开始时间
      * */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private LocalDateTime startTime;
     /*
      * 优惠卷结束时间
      * */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private LocalDateTime endTime;
 
     /*
      * 哪些餐馆可用
      * */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private List<Restaurant> restaurants;
 
 
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private PageExample pageExample;
 
     public Long getId () {

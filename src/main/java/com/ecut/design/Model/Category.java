@@ -4,6 +4,9 @@ package com.ecut.design.Model;
 //import org.springframework.data.annotation.Id;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -39,9 +42,13 @@ public class Category implements Serializable {
          * 上一级分类
          */
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
         private Category parentCategory;
 
         @Transient
+        @ApiModelProperty(hidden=true)
+        @JsonIgnore
         private PageExample pageExample;
 
         public Long getId () {

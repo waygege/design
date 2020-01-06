@@ -1,5 +1,8 @@
 package com.ecut.design.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -51,6 +54,8 @@ public class TransationAmount {
      * 餐馆名称
      */
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private Restaurant restaurant;
     /**
      * 餐馆id
@@ -66,6 +71,8 @@ public class TransationAmount {
     private Long memberId;
 
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private PageExample pageExample;
 
 

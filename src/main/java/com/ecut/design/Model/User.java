@@ -1,6 +1,9 @@
 package com.ecut.design.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
@@ -93,6 +96,8 @@ public class User implements Serializable {
     private Long integral;
 
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private  PageExample pageExample;
 
 
@@ -100,6 +105,8 @@ public class User implements Serializable {
     @JoinTable(name = "user_role_t", joinColumns = { @JoinColumn(name = "uid") },
             inverseJoinColumns = {@JoinColumn(name = "rid") })
     @Transient
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private List<SysRole> roles;
 
     public long getId() {
