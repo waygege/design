@@ -19,14 +19,14 @@ public class ActivityController {
 
     @PostMapping("/insertActivity")
     @ApiOperation ("添加活动")
-    public String insertActivity(Activity activity){
+    public String insertActivity(@RequestBody Activity activity){
 
     return activityService.insertActivity (activity);
     }
 
     @PutMapping("/updateActivity")
     @ApiOperation ("更新活动")
-    public String updateActivity(Activity activity){
+    public String updateActivity(@RequestBody Activity activity){
 
         return activityService.updateActivity (activity);
     }
@@ -48,7 +48,7 @@ public class ActivityController {
 
     @GetMapping("/findActivitys")
     @ApiOperation ("查找活动")
-    public Page<Activity> findActivity(Activity activity){
+    public Page<Activity> findActivity(@RequestBody Activity activity){
 
         return activityService.findActivitys (activity);
     }
