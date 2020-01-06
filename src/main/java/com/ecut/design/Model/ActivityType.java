@@ -19,11 +19,11 @@ public class ActivityType implements Serializable {
     /**
      * 活动类型名
      */
+    @ApiModelProperty(value = "activityTypeName", required = true, position = 2, example = "活动类型名")
     private String activityTypeName;
 
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private PageExample pageExample;
 
     public Long getId () {

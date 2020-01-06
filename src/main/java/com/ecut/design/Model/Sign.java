@@ -19,6 +19,7 @@ public class Sign {
         /**
          * 用户Id
          */
+
         private Long userId;
 
         /**
@@ -26,7 +27,6 @@ public class Sign {
          */
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
         private User user;
 
         /**
@@ -34,14 +34,13 @@ public class Sign {
          */
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
         private String name;
         /**
          * 报名的用户手机号
          */
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
+
         private String phone;
 
 
@@ -50,7 +49,6 @@ public class Sign {
          */
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
         private List<SignOptions> signOptions;
         /**
          * 活动Id
@@ -64,14 +62,12 @@ public class Sign {
          */
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
         private String activityName;
         /**
          * 活动开始时间
          */
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
         private LocalDate activityStart;
 
 
@@ -80,7 +76,6 @@ public class Sign {
          */
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
         private LocalDate activityEnd;
         /**
          * 活动对象
@@ -88,12 +83,12 @@ public class Sign {
 
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
         private Activity activity;
 
         /**
          * 备注
          */
+        @ApiModelProperty(value = "remark",example = "备注",required = true)
         private String  remark;
 
     public Long getId () {

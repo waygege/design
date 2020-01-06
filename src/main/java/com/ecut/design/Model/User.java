@@ -28,10 +28,12 @@ public class User implements Serializable {
     /**
      * 用户名
      */
+    @ApiModelProperty(value = "username", example = "用户名",required = true)
     private String username;
     /**
      * 密码
      */
+    @ApiModelProperty(value = "currentPassword", example = "密码",required = true)
     private String currentPassword;
     /**
      * 加密后的密码
@@ -44,6 +46,7 @@ public class User implements Serializable {
     /**
      * 手机号
      */
+    @ApiModelProperty(value = "phone", example = "手机号",required = true)
     private String phone;
     /**
      * 验证码
@@ -52,18 +55,22 @@ public class User implements Serializable {
     /**
      * 头像
      */
+   @ApiModelProperty(value = "avatar", example = "头像",required = true)
     private String avatar;
     /**
      * 生日
      */
+    @ApiModelProperty(value = "birthday", example = "1998-01-05",required = true)
     private LocalDate birthday;
     /**
      * 邮箱
      */
+    @ApiModelProperty(value = "email", example = "2219376987@qq.com",required = true)
     private String email;
     /**
      * 状态
      */
+    @ApiModelProperty(value = "status", example = "状态",required = true)
     private String status;
 
     /**
@@ -97,7 +104,7 @@ public class User implements Serializable {
 
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
+
     private  PageExample pageExample;
 
 
@@ -106,7 +113,6 @@ public class User implements Serializable {
             inverseJoinColumns = {@JoinColumn(name = "rid") })
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private List<SysRole> roles;
 
     public long getId() {

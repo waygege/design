@@ -1,6 +1,8 @@
 package com.ecut.design.Model;
 
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import javax.persistence.Table;
 
@@ -16,10 +18,12 @@ public class EventIntegral {
     /**
      * 事件
      */
+    @ApiModelProperty(value = "event", required = true, position = 2, example = "事件")
     private String event;
     /**
      * 积分数
      */
+    @ApiModelProperty(value = "integral", required = true, position = 2, example = "10")
     private int integral;
 
     public Long getId () {

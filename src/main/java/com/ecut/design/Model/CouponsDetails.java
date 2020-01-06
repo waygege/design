@@ -1,6 +1,7 @@
 package com.ecut.design.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -37,39 +38,45 @@ public class CouponsDetails {
     /*
      * 优惠卷编号
      * */
+    @ApiModelProperty(value = "couponsCode", required = true, position = 2, example = "优惠卷编号")
     private String couponsCode;
     /*
      * 兑换码
      * */
+    @ApiModelProperty(value = "cdKey", required = true, position = 2, example = "优惠卷兑换码")
     private String cdKey;
     /**
      * 领取时间
      */
+    @ApiModelProperty(hidden=true)
     private LocalDateTime createAt;
     /**
      * 状态
      */
+    @ApiModelProperty(hidden=true)
     private String status;
 
     /**
      * 所属优惠券Id
      */
+    @ApiModelProperty(value = "couponsId", required = true, position = 2, example = "1")
     private Long couponsId;
 
     /**
      * 核销时间
      */
+    @ApiModelProperty(hidden=true)
     private LocalDateTime usedAt;
     /**
      * 用户ID
      */
+    @ApiModelProperty(hidden=true)
     private Long userId;
     /*
      * 赠送数量
      * */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private Long amount;
 
     /**
@@ -77,14 +84,12 @@ public class CouponsDetails {
      */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private List<Long> userIds;
     /*
      * 优惠卷名称
      * */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private String couponsName;
 
     /*

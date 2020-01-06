@@ -14,16 +14,17 @@ public class Article {
     /*
      * 平台协议
      * */
+    @ApiModelProperty(value = "agreement", required = true, position = 2, example = "平台协议")
     private String agreement;
 
     /*
      * 关于我们
      * */
+    @ApiModelProperty(value = "aboutUs", required = true, position = 2, example = "关于我们")
     private String aboutUs;
 
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private PageExample pageExample;
 
     public Long getId () {

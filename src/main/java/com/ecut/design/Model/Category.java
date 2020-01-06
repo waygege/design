@@ -25,30 +25,32 @@ public class Category implements Serializable {
         /**
          * 名称
          */
+        @ApiModelProperty(value = "name", required = true, position = 2, example = "名称")
         private String name;
         /**
          * 图标
          */
+        @ApiModelProperty(value = "icon", required = true, position = 2, example = "图标地址")
         private String icon;
         /**
          * 序号
          */
+        @ApiModelProperty(value = "position", required = true, position = 2, example = "1")
         private Integer position;
         /**
          * 上一级分类Id
          */
+        @ApiModelProperty(value = "categoryId", required = true, position = 2, example = "1")
         private  Long categoryId;
         /**
          * 上一级分类
          */
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
         private Category parentCategory;
 
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
         private PageExample pageExample;
 
         public Long getId () {

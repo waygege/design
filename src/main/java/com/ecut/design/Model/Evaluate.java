@@ -28,27 +28,34 @@ public class Evaluate {
      * 评价时间
      */
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
+    @ApiModelProperty(hidden=true)
     private LocalDateTime commentTime;
     /**
      * 状态
      */
+    @ApiModelProperty(value = "status", required = true, position = 2, example = "状态")
     private String status;
     /**
      * 评价内容问题
      */
+    @ApiModelProperty(value = "content", required = true, position = 2, example = "评价问题")
     private String content;
     /**
      * 评价星数
      */
+    @ApiModelProperty(value = "stars", required = true, position = 2, example = "评价星数")
     private Integer stars;
     /**
      * 评价用户用户Id
      */
+    @ApiModelProperty(hidden=true)
     private  Long userId;
 
     /**
      * 评价餐馆Id
      */
+    @ApiModelProperty(hidden=true)
+    @JsonIgnore
     private Long restaurantId;
     /**
      *搜索评价开始时间

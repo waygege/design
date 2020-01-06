@@ -51,38 +51,45 @@ public class Banner {
         /*
          * 广告标题
          * */
+        @ApiModelProperty(value = "bannerTitle", required = true, position = 2, example = "广告标题")
         private String bannerTitle;
 
         /*
          * 广告图
          * */
+        @ApiModelProperty(value = "bannerPicture", required = true, position = 2, example = "广告图片地址")
         private String bannerPicture;
 
         /*
          * 序号
          * */
+        @ApiModelProperty(value = "position", required = true, position = 2, example = "1")
         private Long position;
 
         /*
          * 开始时间
          * */
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
+        @ApiModelProperty(value = "startTime", required = true, position = 2, example = "2020-01-05 12:00:00")
         private LocalDateTime startTime;
 
         /*
          * 结束时间
          * */
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
+        @ApiModelProperty(value = "endTime", required = true, position = 2, example = "2020-01-05 12:00:00")
         private LocalDateTime endTime;
 
         /*
          * 状态
          * */
+        @ApiModelProperty(value = "status", required = true, position = 2, example = "未开始")
         private String status;
 
         /*
          * 跳转链接
          * */
+        @ApiModelProperty(value = "jumpLink", required = true, position = 2, example = "跳转链接")
         private String jumpLink;
 
         /*
@@ -90,7 +97,7 @@ public class Banner {
          *   banner      "bannerCategory": "banner"
          *   弹窗视图    "bannerCategory": "jump"
          * */
-
+        @ApiModelProperty(value = "bannerCategory", required = true, position = 2, example = "banner分类")
         private String bannerCategory;
 
         /*
@@ -99,18 +106,15 @@ public class Banner {
 
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
         private List<User> users;
 
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
         private List<Long> userIds;
 
 
         @Transient
         @ApiModelProperty(hidden=true)
-        @JsonIgnore
        private  PageExample pageExample;
 
 

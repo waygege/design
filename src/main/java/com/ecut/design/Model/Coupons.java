@@ -46,16 +46,19 @@ public class Coupons {
     /*
      * 优惠卷名称
      * */
+    @ApiModelProperty(value = "couponsName", required = true, position = 2, example = "优惠卷名")
     private String couponsName;
 
     /*
      * 优惠卷说明
      * */
+    @ApiModelProperty(value = "couponDescription", required = true, position = 2, example = "优惠卷描述")
     private String couponDescription;
 
     /*
      * 优惠券类型
      * */
+    @ApiModelProperty(value = "couponsType", required = true, position = 2, example = "优惠卷类型")
     private String couponsType;
 
 
@@ -63,11 +66,13 @@ public class Coupons {
      * 开始时间
      * */
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
+    @ApiModelProperty(value = "startTime", required = true, position = 2, example = "2020-01-05 12:00:00")
     private LocalDateTime startTime;
     /*
      * 结束时间
      * */
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
+    @ApiModelProperty(value = "endTime", required = true, position = 2, example = "2020-01-05 12:00:00")
     private LocalDateTime endTime;
 
 
@@ -77,14 +82,12 @@ public class Coupons {
      * */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private Integer issueTotal;
     /*
      * 领取总数
      * */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private Integer receivedTotal;
 
     /*
@@ -92,28 +95,30 @@ public class Coupons {
      * */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private Integer usedTotal;
 
 
     /*
      * 优惠卷状态
      * */
+    @ApiModelProperty(value = "status", required = true, position = 2, example = "未开始")
     private String status;
 
     /*
      * 所需积分
      * */
+    @ApiModelProperty(value = "integration", required = true, position = 2, example = "0")
     private Long integration;
     /*
      * 使用规则
      * */
-
+    @ApiModelProperty(value = "rules", required = true, position = 2, example = "使用规则")
     private String rules;
 
     /*
      * 优惠卷种类
      * */
+    @ApiModelProperty(value = "couponsCategory", required = true, position = 2, example = "优惠卷种类")
     private String couponsCategory;
 
     /*
@@ -122,24 +127,20 @@ public class Coupons {
 
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private List<Long> restaurants;
 
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private Long restaurantId;
     /*
      * 赠送的用户
      * */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private List<User> users;
 
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private PageExample pageExample;
 
     public Long getId () {

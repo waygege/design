@@ -1,6 +1,8 @@
 package com.ecut.design.Model;
 
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 
 /**
@@ -15,15 +17,18 @@ public class SignOptions {
     /**
      * 选项标题
      */
+    @ApiModelProperty(value = "title",example = "标题",required = true)
     private String title;
     /**
      * 选择选项
      */
+    @ApiModelProperty(value = "attribute",example = "选项",required = true)
     private String attribute;
     /**
      * 报名活动Id
      */
-    private Long signId;
+    @ApiModelProperty(value = "attribute",example = "报名活动Id",required = true)
+    private Long activityId;
 
     public Long getId () {
         return id;
@@ -49,11 +54,11 @@ public class SignOptions {
         this.attribute = attribute;
     }
 
-    public Long getSignId () {
-        return signId;
+    public Long getActivityId () {
+        return activityId;
     }
 
-    public void setSignId (Long signId) {
-        this.signId = signId;
+    public void setActivityId (Long activityId) {
+        this.activityId = activityId;
     }
 }
