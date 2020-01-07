@@ -1,6 +1,7 @@
 package com.ecut.design.Repository;
 
 import com.ecut.design.Model.User;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import org.springframework.data.jpa.repository.Modifying;
@@ -36,6 +37,7 @@ public interface UserRepository extends JpaRepository<User,Long> {
     @Transactional
     @Query(value="update user_t set status=:status where id in (:ids)",nativeQuery = true)
     void updateByUserIds(Long[] ids,String status);
+
 
 
 

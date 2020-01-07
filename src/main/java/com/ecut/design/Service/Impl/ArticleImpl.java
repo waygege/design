@@ -21,6 +21,7 @@ public class ArticleImpl implements ArticleService {
     PageableUtil pageableUtil;
 
     @ApiOperation ("添加文章")
+    @Override
     public String insertArticle(Article article){
         articleRepository.save (article);
         return "success";
@@ -35,16 +36,25 @@ public class ArticleImpl implements ArticleService {
 
 
     @ApiOperation ("删除文章")
+    @Override
     public String deleteArticle(Long id) {
         articleRepository.deleteById (id);
         return "success";
     }
 
     @ApiOperation ("查询文章")
+    @Override
     public Page<Article> findAllArticles(Article article){
         PageExample pageExample= article.getPageExample ();
         Pageable pageable = pageableUtil.getPageable (pageExample);
         return    articleRepository.findAll (pageable);
 
+    }
+
+    @ApiOperation ("查看文章内容")
+    @Override
+    public Article findArticleById(Long id){
+
+        return articleRepository.findById (id).get ();
     }
 }

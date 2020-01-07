@@ -46,4 +46,11 @@ public class ArticleController {
 
         return  articleService.findAllArticles (article);
     }
+
+    @ApiOperation ("查看文章内容")
+    @GetMapping("/findArticleById")
+    public Article findArticleById(Long id){
+
+        return articleService.findArticleById (id);
+    }
 }

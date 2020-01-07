@@ -2,8 +2,10 @@ package com.ecut.design.Service.Impl;
 
 import com.ecut.design.Config.util.PageableUtil;
 import com.ecut.design.Model.Activity;
+import com.ecut.design.Model.ActivityType;
 import com.ecut.design.Model.Options;
 import com.ecut.design.Repository.ActivityRepository;
+import com.ecut.design.Repository.ActivityTypeRepository;
 import com.ecut.design.Repository.OptionRepository;
 import com.ecut.design.Service.ActivityService;
 import io.swagger.annotations.ApiOperation;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ActivityImpl implements ActivityService {
@@ -22,13 +25,15 @@ public class ActivityImpl implements ActivityService {
     @Autowired
     OptionRepository optionRepository;
     @Autowired
+    ActivityTypeRepository  activityTypeRepository;
+    @Autowired
     PageableUtil pageableUtil;
 
     @ApiOperation ("添加活动")
     @Override
     public String insertActivity(Activity activity){
         activity= IsEnable (activity);
-        activityRepository.save (activity);
+        activity= activityRepository.save (activity);
         for (Options options:activity.getOptionsSet ()) {
             options.setActivityId (activity.getId ());
             optionRepository.save (options);
@@ -58,7 +63,11 @@ public class ActivityImpl implements ActivityService {
    @ApiOperation ("查找单个活动详情")
    @Override
     public Activity findActiviytById(Long id){
-        Activity activity=activityRepository.findActivityById (id);
+
+        Activity activity=activityRepository.findById (id).get ();
+        activity.setOptionsSet (optionRepository.findByActivityId (id));
+       ActivityType activityType=activityTypeRepository.findById (activity.getActivityTypeId ()).get ();
+       activity.setActivityType (activityType);
        activity= IsEnable (activity);
         return activity;
    }

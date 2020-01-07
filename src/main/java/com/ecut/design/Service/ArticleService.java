@@ -20,4 +20,7 @@ public interface ArticleService {
 
     @ApiOperation ("查询文章")
     public Page<Article> findAllArticles(Article article);
+
+    @ApiOperation ("查看文章内容")
+    public Article findArticleById(Long id);
 }

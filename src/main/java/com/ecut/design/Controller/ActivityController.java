@@ -39,7 +39,7 @@ public class ActivityController {
     }
 
 
-    @GetMapping("/findActivityById")
+    @GetMapping("/findActiviytById")
     @ApiOperation("查找单个活动详情")
     public Activity findActivityById(Long id){
 

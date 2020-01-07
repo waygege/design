@@ -3,8 +3,7 @@ package com.ecut.design.Service.Impl;
 
 import com.ecut.design.Config.util.PageableUtil;
 import com.ecut.design.Model.ActivityType;
-import com.ecut.design.Repository.ActivitoryTypeRepository;
-import com.ecut.design.Service.ActivityService;
+import com.ecut.design.Repository.ActivityTypeRepository;
 import com.ecut.design.Service.ActivityTypeService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ import org.springframework.stereotype.Service;
 public class AcivityTypeImpl implements ActivityTypeService {
 
     @Autowired
-    ActivitoryTypeRepository activityTypeRepository;
+    ActivityTypeRepository activityTypeRepository;
 
     @Autowired
     PageableUtil pageableUtil;

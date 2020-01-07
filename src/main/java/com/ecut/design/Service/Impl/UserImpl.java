@@ -159,12 +159,14 @@ public class UserImpl implements UserService {
     }
 
     @ApiOperation("更新用户状态")
+    @Override
     public String updateUserStatus (Long[] ids, String status) {
         userRepository.updateByUserIds (ids, status);
         return "success";
     }
 
     @ApiOperation("查询用户")
+    @Override
     public Page<User> searchUsers (User user) {
 
         ExampleMatcher matcher = ExampleMatcher.matching ()
@@ -174,5 +176,12 @@ public class UserImpl implements UserService {
         Pageable pageable = pageableUtil.getPageable (user.getPageExample ());
 
         return userRepository.findAll (example, pageable);
+    }
+
+    @ApiOperation ("获取用户个人信息")
+    @Override
+    public User findUserById(Long id){
+
+        return  userRepository.findById (id).get ();
     }
 }
