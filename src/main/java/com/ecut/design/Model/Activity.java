@@ -70,7 +70,7 @@ public class Activity implements Serializable {
      * 选项
      */
     @Transient
-    @ApiModelProperty(hidden=true)
+
     private List<Options> optionsSet;
 
     @Transient
