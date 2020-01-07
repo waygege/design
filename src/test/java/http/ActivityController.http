@@ -1,0 +1,84 @@
+###添加活动
+POST localhost:8080/activity/insertActivity
+Content-Type: application/json
+
+{
+  "optionsSet": [
+    {
+      "activityId": 1,
+      "attributeA": "选项A",
+      "attributeB": "选项B",
+      "attributeC": "选项C",
+      "attributeD": "选项D",
+      "title": "标题"
+    }
+  ],
+  "activityBanner": "活动图地址",
+  "activityEnd": "2020-01-05",
+  "activityExplain": "活动说明",
+  "activityName": "活动名称",
+  "activityStart": "2020-01-05",
+  "activityTypeId": 1,
+  "status": "未开始"
+
+}
+###
+
+###更新活动
+PUT localhost:8080/activity/updateActivity
+Content-Type: application/json
+
+{
+
+  "id": 73,
+  "optionsSet": [
+    {
+      "activityId": 1,
+      "attributeA": "选项A",
+      "attributeB": "选项B",
+      "attributeC": "选项C",
+      "attributeD": "D",
+      "id": 74,
+      "title": "标题"
+    },
+    {
+      "activityId": 1,
+      "attributeA": "A",
+      "attributeB": "B",
+      "attributeC": "C",
+      "attributeD": "D",
+      "title": "标题"
+    }
+  ],
+  "activityBanner": "活动图地址",
+  "activityEnd": "2020-01-20",
+  "activityExplain": "活动说明",
+  "activityName": "活动名称",
+  "activityStart": "2020-01-05",
+  "activityTypeId": 1,
+  "status": "未开始"
+
+}
+###查找活动详情
+GET  localhost:8080/activity/findActiviytById?id=70
+###
+
+###条件查找活动
+GET  localhost:8080/activity/findActivitys
+Content-Type: application/json
+
+{
+    "activityName": "活动名称",
+  "pageExample": {
+    "pageNumber": 1,
+    "pageSize": 10,
+    "sortType": "",
+    "sortableFields": ""
+  }
+
+}
+###
+###删除活动
+DELETE localhost:8080/activity/deleteActivity?id=79
+
+###
