@@ -35,7 +35,7 @@ PUT http://localhost:8080/updateUserStatus?ids=404322608205529088&ids=4043224668
 
 ###
 ###删除用户
-DELETE localhost:8080/deleteUser?ids=404322429062610944
+DELETE localhost:8080/deleteUser?ids=412320481304117248
 Content-Type: application/json
 
 ###

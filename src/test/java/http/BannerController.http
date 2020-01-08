@@ -1,0 +1,21 @@
+###新建广告
+POST localhost:8080/banner/insertBanner
+Content-Type: application/json
+
+{
+  "bannerCategory": "banner分类",
+  "bannerPicture": "广告图片地址",
+  "bannerTitle": "广告标题",
+  "endTime": "2020-01-05 12:00:00",
+  "jumpLink": "跳转链接",
+  "position": 1,
+  "startTime": "2020-01-05 12:00:00",
+  "status": "未开始"
+}
+
+###删除广告
+DELETE localhost:8080/banner/deleteBanner?ids=84
+
+###
+
+

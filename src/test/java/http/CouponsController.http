@@ -36,7 +36,7 @@ Content-Type: application/json
 ###
 
 ###删除优惠卷
-DELETE localhost:8080/coupons/deleteCoupons?ids=41&ids=42
+DELETE localhost:8080/coupons/deleteCoupons?ids=41
 
 ###
 

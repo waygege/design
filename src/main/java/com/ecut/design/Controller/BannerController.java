@@ -26,7 +26,7 @@ public class BannerController {
 
     @ApiOperation ("删除广告")
     @DeleteMapping("/deleteBanner")
-    public String deleteBanner(Long[] ids){
+    public String deleteBanner(@RequestParam("ids") Long[] ids){
 
         return bannerService.deleteBanner (ids);
     }

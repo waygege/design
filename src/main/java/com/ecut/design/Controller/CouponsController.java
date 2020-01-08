@@ -18,8 +18,8 @@ public class CouponsController {
 
 
     @ApiOperation ("删除优惠卷")
-    @DeleteMapping("/deleteCopons")
-    public String deleteCoupons(Long[] ids){
+    @DeleteMapping("/deleteCoupons")
+    public String deleteCoupons(@RequestParam("ids") Long[] ids){
 
         return couponsService.deleteCoupons (ids);
     }
