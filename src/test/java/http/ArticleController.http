@@ -1,9 +1,48 @@
+
+###添加文章
 POST localhost:8080/article/insertArticle
 Content-Type: application/json
 
 {
+  "agreement": "协议",
+  "aboutUs": "关于我们"
 
 }
-###
-POST localhost:8080/article/insertArticle
+
+
+
+###更新文章
+PUT localhost:8080/article/updateArticle
+Content-Type: application/json
+
+{
+  "id": 1,
+  "agreement": "协议",
+  "aboutUs": "关于我"
+}
+
+
+###删除文章
+DELETE localhost:8080/article/deleteArticle?id=83
+
+
+###查询文章
+GET localhost:8080/article/findAllArticles
+Content-Type: application/json
+
+
+{
+  "agreement": "协议",
+  "pageExample": {
+    "pageNumber": 1,
+    "pageSize": 10,
+    "sortType": "",
+    "sortableFields": ""
+  }
+
+}
+
+
+###查找文章详情
+GET localhost:8080/article/findArticleById?id=1
 Content-Type: application/json
