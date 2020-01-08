@@ -37,4 +37,7 @@ public interface UserService {
     @ApiOperation ("查询用户")
     public Page<User> searchUsers(User user);
 
+    @ApiOperation ("获取用户个人信息")
+    public User findUserById(Long id);
+
 }
