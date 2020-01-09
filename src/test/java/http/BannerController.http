@@ -6,7 +6,7 @@ Content-Type: application/json
   "bannerCategory": "banner分类",
   "bannerPicture": "广告图片地址",
   "bannerTitle": "广告标题",
-  "endTime": "2020-01-05 12:00:00",
+  "endTime": "2020-01-10 12:00:00",
   "jumpLink": "跳转链接",
   "position": 1,
   "startTime": "2020-01-05 12:00:00",
@@ -16,6 +16,48 @@ Content-Type: application/json
 ###删除广告
 DELETE localhost:8080/banner/deleteBanner?ids=84
 
+
+
+###更新广告
+PUT localhost:8080/banner/ updateBanner
+Content-Type: application/json
+
+{
+  "id": "67",
+  "bannerCategory": "banner",
+  "bannerPicture": "广告图片地址",
+  "bannerTitle": "广告标题",
+  "startTime": "2020-01-05 12:00:00",
+  "endTime": "2020-01-05 12:00:00",
+  "jumpLink": "跳转链接",
+  "position": 1,
+  "status": "未开始"
+}
+
 ###
+###上下架广告
+PUT localhost:8080/banner/upOrDownBanner?id=89&status=上架
+
+
+###查找展示广告
+GET localhost:8080/banner/findShowBanners
+
+###条件查询广告
+GET localhost:8080/banner/findBanner
+Content-Type: application/json
+
+{
+  "bannerTitle": "标题",
+  "pageExample": {
+    "pageNumber": 1,
+    "pageSize": 10,
+    "sortType": "",
+    "sortableFields": ""
+  }
+}
+
+###
+
+
 
 
