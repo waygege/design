@@ -1,0 +1,19 @@
+
+###发布评价
+POST localhost:8080/evaluate/sendEvaluate
+Content-Type: application/json
+
+{
+  "commentEndTime": "",
+  "commentStartTime": "",
+
+  "content": "评价问题",
+  "stars": 2,
+  "status": "状态"
+}
+
+###查看评价
+GET localhost:8080/evaluate/findEvalutaById?id=90
+
+###
+
