@@ -38,7 +38,7 @@ public class BannerImpl implements BannerService {
     @Override
     public String deleteBanner(Long[] ids){
 
-        bannerRepository.deleteBannerByIds(ids);
+        bannerRepository.deleteBannersByIds(ids);
         return "success";
     }
 
@@ -54,12 +54,13 @@ public class BannerImpl implements BannerService {
     @Override
     public String upOrDownBanner(Long id,String status){
 
-        Banner banner=bannerRepository.getOne (id);
+        Banner banner=bannerRepository.findById (id).get ();
         banner=isValidBanner (banner);
         if (!Banner.STATUS_EXPIRED.equals (banner.getStatus ()))
         {
             banner.setStatus (status);
         }
+        banner=isValidBanner (banner);
         bannerRepository.save (banner);
         return "success";
     }
@@ -90,7 +91,11 @@ public class BannerImpl implements BannerService {
         Pageable pageable=pageableUtil.getPageable (banner.getPageExample ());
 
         Page<Banner> pageBefor =bannerRepository.findAll (exampleDish,pageable);
-     return  null;
+        for (Banner banner1:pageBefor.getContent ()){
+            banner1=isValidBanner (banner1);
+            bannerRepository.save (banner1);
+        }
+     return  pageBefor;
     }
 
 
