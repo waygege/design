@@ -12,6 +12,6 @@ public interface CouponsRepository extends JpaRepository<Coupons,Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "delete from coupons where id in(:ids)",nativeQuery = true)
+    @Query(value = "delete from coupons where id in (:ids)",nativeQuery = true)
     void deleteByIds(Long[] ids);
 }
