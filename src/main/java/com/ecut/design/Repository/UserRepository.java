@@ -23,7 +23,7 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
     @Modifying
     @Transactional
-    @Query(value="delete from user_t  where id in (:ids)",nativeQuery = true)
+    @Query(value="delete from user_t where id in (:ids)",nativeQuery = true)
     void deleteByUserIds(Long[] ids);
 
     @Query(value = "select * from user_t  u where u.username=?1 ",nativeQuery = true)
