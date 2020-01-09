@@ -104,6 +104,12 @@ public class UserController {
         return userService.searchUsers (user);
     }
 
+    @ApiOperation ("获取用户个人信息")
+    @GetMapping("/findUserById")
+    public User findUserById(Long id){
+
+        return userService.findUserById (id);
+    }
 
 
 }

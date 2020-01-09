@@ -70,11 +70,9 @@ public class Activity implements Serializable {
      * 选项
      */
     @Transient
-
     private List<Options> optionsSet;
 
     @Transient
-    @ApiModelProperty(hidden=true)
     private PageExample pageExample;
 
     public Long getId () {
