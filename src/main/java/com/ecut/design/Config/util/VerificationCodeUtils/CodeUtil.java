@@ -1,4 +1,4 @@
-package com.ecut.design.Config.util;
+package com.ecut.design.Config.util.VerificationCodeUtils;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;

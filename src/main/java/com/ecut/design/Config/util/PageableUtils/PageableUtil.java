@@ -1,4 +1,4 @@
-package com.ecut.design.Config.util;
+package com.ecut.design.Config.util.PageableUtils;
 
 import com.ecut.design.Model.PageExample;
 import io.netty.util.internal.StringUtil;

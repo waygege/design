@@ -1,4 +1,4 @@
-package com.ecut.design.Config;
+package com.ecut.design.Config.MQ;
 
 import com.rabbitmq.client.Channel;
 import org.slf4j.Logger;

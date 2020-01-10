@@ -1,7 +1,7 @@
 package com.ecut.design.Service.Impl;
 
 
-import com.ecut.design.Config.util.PageableUtil;
+import com.ecut.design.Config.util.PageableUtils.PageableUtil;
 import com.ecut.design.Model.ActivityType;
 import com.ecut.design.Repository.ActivityTypeRepository;
 import com.ecut.design.Service.ActivityTypeService;

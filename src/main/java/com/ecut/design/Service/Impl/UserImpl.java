@@ -1,9 +1,9 @@
 package com.ecut.design.Service.Impl;
 
-import com.ecut.design.Config.PasswordHelper;
-import com.ecut.design.Config.util.CodeUtil;
-import com.ecut.design.Config.util.PageableUtil;
-import com.ecut.design.Config.util.SnowFlake;
+import com.ecut.design.Config.shiro.PasswordHelper;
+import com.ecut.design.Config.util.VerificationCodeUtils.CodeUtil;
+import com.ecut.design.Config.util.PageableUtils.PageableUtil;
+import com.ecut.design.Config.util.IdProduct.SnowFlake;
 import com.ecut.design.Model.User;
 import com.ecut.design.Repository.UserRepository;
 import com.ecut.design.Service.UserService;
@@ -26,9 +26,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 
 @Service
 public class UserImpl implements UserService {

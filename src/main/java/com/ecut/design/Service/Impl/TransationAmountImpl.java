@@ -1,12 +1,11 @@
 package com.ecut.design.Service.Impl;
 
 
-import com.ecut.design.Config.util.PageableUtil;
+import com.ecut.design.Config.util.PageableUtils.PageableUtil;
 import com.ecut.design.Model.TransationAmount;
 import com.ecut.design.Model.User;
 import com.ecut.design.Repository.TransationAmountRepository;
 import com.ecut.design.Service.TransationAmountService;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;

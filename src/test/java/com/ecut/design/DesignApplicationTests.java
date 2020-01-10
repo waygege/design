@@ -1,7 +1,7 @@
 package com.ecut.design;
 
 
-import com.ecut.design.Config.util.MsgProducer;
+import com.ecut.design.Config.MQ.MsgProducer;
 import com.ecut.design.Model.User;
 import com.ecut.design.Repository.UserRepository;
 import org.junit.jupiter.api.Test;

@@ -1,5 +1,5 @@
 
-package com.ecut.design.Config;
+package com.ecut.design.Config.shiro;
 
 import com.ecut.design.Model.User;
 import org.apache.shiro.crypto.RandomNumberGenerator;

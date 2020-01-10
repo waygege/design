@@ -1,12 +1,10 @@
 package com.ecut.design.Service.Impl;
 
-import com.ecut.design.Config.util.PageableUtil;
+import com.ecut.design.Config.util.PageableUtils.PageableUtil;
 
-import com.ecut.design.Config.util.UUIDUtils;
-import com.ecut.design.Model.Activity;
+import com.ecut.design.Config.util.IdProduct.UUIDUtils;
 import com.ecut.design.Model.Coupons;
 import com.ecut.design.Model.CouponsDetails;
-import com.ecut.design.Repository.CategoryRepository;
 import com.ecut.design.Repository.CouponsDetailsRepository;
 import com.ecut.design.Repository.CouponsRepository;
 import com.ecut.design.Service.CouponsService;

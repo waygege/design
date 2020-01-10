@@ -1,4 +1,4 @@
-package com.ecut.design.Config;
+package com.ecut.design.Config.redis;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

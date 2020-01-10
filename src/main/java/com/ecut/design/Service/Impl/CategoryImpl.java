@@ -1,6 +1,6 @@
 package com.ecut.design.Service.Impl;
 
-import com.ecut.design.Config.util.PageableUtil;
+import com.ecut.design.Config.util.PageableUtils.PageableUtil;
 import com.ecut.design.Model.Category;
 import com.ecut.design.Repository.CategoryRepository;
 import com.ecut.design.Service.CategoryService;
@@ -9,9 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CategoryImpl implements CategoryService {

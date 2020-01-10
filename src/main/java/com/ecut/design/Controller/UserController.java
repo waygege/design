@@ -1,31 +1,16 @@
 package com.ecut.design.Controller;
 
-import com.ecut.design.Config.PasswordHelper;
+import com.ecut.design.Config.shiro.PasswordHelper;
 
 import com.ecut.design.Model.User;
 import com.ecut.design.Service.UserService;
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import io.netty.util.internal.StringUtil;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.authz.AuthorizationException;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.spring.web.json.Json;
-
-import java.sql.Date;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.UUID;
 
 
 @RestController

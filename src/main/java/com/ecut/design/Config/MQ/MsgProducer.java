@@ -1,6 +1,6 @@
-package com.ecut.design.Config.util;
+package com.ecut.design.Config.MQ;
 
-import com.ecut.design.Config.RabbitConfig;
+import com.ecut.design.Config.MQ.RabbitConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.connection.CorrelationData;

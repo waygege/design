@@ -1,7 +1,7 @@
 package com.ecut.design.Service.Impl;
 
 
-import com.ecut.design.Config.util.UUIDUtils;
+import com.ecut.design.Config.util.IdProduct.UUIDUtils;
 import com.ecut.design.Model.Coupons;
 import com.ecut.design.Model.CouponsDetails;
 import com.ecut.design.Model.User;
@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class CouponsDetailsImpl implements CouponsDetailsService {

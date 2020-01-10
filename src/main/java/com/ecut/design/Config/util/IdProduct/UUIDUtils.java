@@ -1,4 +1,4 @@
-package com.ecut.design.Config.util;
+package com.ecut.design.Config.util.IdProduct;
 
 
 

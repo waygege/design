@@ -1,6 +1,6 @@
 package com.ecut.design.Service.Impl;
 
-import com.ecut.design.Config.util.PageableUtil;
+import com.ecut.design.Config.util.PageableUtils.PageableUtil;
 import com.ecut.design.Model.Activity;
 import com.ecut.design.Model.ActivityType;
 import com.ecut.design.Model.Options;
@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ActivityImpl implements ActivityService {

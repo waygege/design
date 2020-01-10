@@ -1,4 +1,4 @@
-package com.ecut.design.Config;
+package com.ecut.design.Config.redis;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

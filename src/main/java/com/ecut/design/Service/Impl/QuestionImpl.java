@@ -1,6 +1,6 @@
 package com.ecut.design.Service.Impl;
 
-import com.ecut.design.Config.util.PageableUtil;
+import com.ecut.design.Config.util.PageableUtils.PageableUtil;
 import com.ecut.design.Model.PageExample;
 import com.ecut.design.Model.Question;
 import com.ecut.design.Repository.QuestionRepository;
