@@ -3,6 +3,7 @@ package com.ecut.design.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,6 +13,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name="activity_type")
+@Data
 public class ActivityType implements Serializable {
     @Id
     @GeneratedValue
@@ -26,27 +28,5 @@ public class ActivityType implements Serializable {
     @ApiModelProperty(hidden=true)
     private PageExample pageExample;
 
-    public Long getId () {
-        return id;
-    }
 
-    public void setId (Long id) {
-        this.id = id;
-    }
-
-    public String getActivityTypeName () {
-        return activityTypeName;
-    }
-
-    public void setActivityTypeName (String activityTypeName) {
-        this.activityTypeName = activityTypeName;
-    }
-
-    public PageExample getPageExample () {
-        return pageExample;
-    }
-
-    public void setPageExample (PageExample pageExample) {
-        this.pageExample = pageExample;
-    }
 }

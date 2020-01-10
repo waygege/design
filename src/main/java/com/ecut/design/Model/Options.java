@@ -1,6 +1,7 @@
 package com.ecut.design.Model;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "options")
+@Data
 public class Options implements Serializable {
 
     @Id
@@ -49,60 +51,5 @@ public class Options implements Serializable {
     @ApiModelProperty(value = "activityId" ,example = "1",required = true)
     private Long activityId;
 
-    public Long getId () {
-        return id;
-    }
-
-    public void setId (Long id) {
-        this.id = id;
-    }
-
-    public String getTitle () {
-        return title;
-    }
-
-    public void setTitle (String title) {
-        this.title = title;
-    }
-
-    public String getAttributeA () {
-        return attributeA;
-    }
-
-    public void setAttributeA (String attributeA) {
-        this.attributeA = attributeA;
-    }
-
-    public String getAttributeB () {
-        return attributeB;
-    }
-
-    public void setAttributeB (String attributeB) {
-        this.attributeB = attributeB;
-    }
-
-    public String getAttributeC () {
-        return attributeC;
-    }
-
-    public void setAttributeC (String attributeC) {
-        this.attributeC = attributeC;
-    }
-
-    public String getAttributeD () {
-        return attributeD;
-    }
-
-    public void setAttributeD (String attributeD) {
-        this.attributeD = attributeD;
-    }
-
-    public Long getActivityId () {
-        return activityId;
-    }
-
-    public void setActivityId (Long activityId) {
-        this.activityId = activityId;
-    }
 }
 

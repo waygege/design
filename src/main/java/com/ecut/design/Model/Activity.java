@@ -3,6 +3,7 @@ package com.ecut.design.Model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +15,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "activity")
+@Data
 public class Activity implements Serializable {
     public static final String ACTIVITY_NOT_START = "未开始";
     public static final String ACTIVITY__HAVING = "进行中";
@@ -75,92 +77,6 @@ public class Activity implements Serializable {
     @Transient
     private PageExample pageExample;
 
-    public Long getId () {
-        return id;
-    }
 
-    public void setId (Long id) {
-        this.id = id;
-    }
-
-    public String getActivityName () {
-        return activityName;
-    }
-
-    public void setActivityName (String activityName) {
-        this.activityName = activityName;
-    }
-
-    public ActivityType getActivityType () {
-        return activityType;
-    }
-
-    public void setActivityType (ActivityType activityType) {
-        this.activityType = activityType;
-    }
-
-    public String getStatus () {
-        return status;
-    }
-
-    public void setStatus (String status) {
-        this.status = status;
-    }
-
-    public LocalDate getActivityStart () {
-        return activityStart;
-    }
-
-    public void setActivityStart (LocalDate activityStart) {
-        this.activityStart = activityStart;
-    }
-
-    public LocalDate getActivityEnd () {
-        return activityEnd;
-    }
-
-    public void setActivityEnd (LocalDate activityEnd) {
-        this.activityEnd = activityEnd;
-    }
-
-    public String getActivityExplain () {
-        return activityExplain;
-    }
-
-    public void setActivityExplain (String activityExplain) {
-        this.activityExplain = activityExplain;
-    }
-
-    public String getActivityBanner () {
-        return activityBanner;
-    }
-
-    public void setActivityBanner (String activityBanner) {
-        this.activityBanner = activityBanner;
-    }
-
-    public List<Options> getOptionsSet () {
-        return optionsSet;
-    }
-
-    public void setOptionsSet (List<Options> optionsSet) {
-        this.optionsSet = optionsSet;
-    }
-
-    public Long getActivityTypeId () {
-        return activityTypeId;
-    }
-
-    public void setActivityTypeId (Long activityTypeId) {
-        this.activityTypeId = activityTypeId;
-    }
-
-    public PageExample getPageExample () {
-        return pageExample;
-    }
-
-    public void setPageExample (PageExample pageExample) {
-        this.pageExample = pageExample;
-    }
 }
 

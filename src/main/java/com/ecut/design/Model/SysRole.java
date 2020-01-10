@@ -1,4 +1,6 @@
 package com.ecut.design.Model;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -16,6 +18,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "role_t")
+@Data
 public class SysRole implements Serializable {
     private static final long serialVersionUID = -8687790154329829056L;
     @Id
@@ -34,37 +37,7 @@ public class SysRole implements Serializable {
     @JoinColumn(name = "uid") })
     private List<User> users;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public List<SysPermission> getPermissions() {
-        return permissions;
-    }
-
-    public void setPermissions(List<SysPermission> permissions) {
-        this.permissions = permissions;
-    }
-
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
 
 }
 

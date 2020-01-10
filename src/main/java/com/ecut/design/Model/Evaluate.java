@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /*
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name = "evaluate")
-public class Evaluate {
+public class Evaluate implements Serializable {
 
     public static final String STATUS_ENABLE = "启用";
     public static final String STATUS_DISABLE = "禁用";
@@ -55,7 +56,6 @@ public class Evaluate {
      * 评价餐馆Id
      */
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private Long restaurantId;
     /**
      *搜索评价开始时间
@@ -63,7 +63,6 @@ public class Evaluate {
     @Transient
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private LocalDateTime commentStartTime;
     /**
      *搜索评价结束时间
@@ -71,22 +70,22 @@ public class Evaluate {
     @Transient
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private LocalDateTime commentEndTime;
     /**
      * 评价用户
      */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private User user;
     /**
      * 评价餐厅
      */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private  Restaurant restaurant;
+
+    @Transient
+    private PageExample pageExample;
 
     public Long getId () {
         return id;
@@ -174,5 +173,13 @@ public class Evaluate {
 
     public void setRestaurant (Restaurant restaurant) {
         this.restaurant = restaurant;
+    }
+
+    public PageExample getPageExample () {
+        return pageExample;
+    }
+
+    public void setPageExample (PageExample pageExample) {
+        this.pageExample = pageExample;
     }
 }

@@ -3,6 +3,7 @@ package com.ecut.design.Model;
 
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -12,6 +13,7 @@ import java.math.BigDecimal;
  */
 @Entity
 @Table(name = "member_integral")
+@Data
 public class MemberIntegral {
     public static final String MEMBER_GRADE1="普通会员";
     public static final String MEMBER_GRADE2="黄金会员";
@@ -35,36 +37,4 @@ public class MemberIntegral {
      */
     @ApiModelProperty(value = "integral", required = true, position = 2, example = "10")
     private int  integral;
-
-    public Long getId () {
-        return id;
-    }
-
-    public void setId (Long id) {
-        this.id = id;
-    }
-
-    public String getMemberGrade () {
-        return memberGrade;
-    }
-
-    public void setMemberGrade (String memberGrade) {
-        this.memberGrade = memberGrade;
-    }
-
-    public BigDecimal getMoney () {
-        return money;
-    }
-
-    public void setMoney (BigDecimal money) {
-        this.money = money;
-    }
-
-    public int getIntegral () {
-        return integral;
-    }
-
-    public void setIntegral (int integral) {
-        this.integral = integral;
-    }
 }

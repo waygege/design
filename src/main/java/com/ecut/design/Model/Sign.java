@@ -2,6 +2,7 @@ package com.ecut.design.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ import java.util.List;
  */
 @Entity
 @Table(name = "sign")
+@Data
 public class Sign {
       @Id
       @GeneratedValue
@@ -91,99 +93,5 @@ public class Sign {
         @ApiModelProperty(value = "remark",example = "备注",required = true)
         private String  remark;
 
-    public Long getId () {
-        return id;
-    }
 
-    public void setId (Long id) {
-        this.id = id;
-    }
-
-    public Long getUserId () {
-        return userId;
-    }
-
-    public void setUserId (Long userId) {
-        this.userId = userId;
-    }
-
-    public User getUser () {
-        return user;
-    }
-
-    public void setUser (User user) {
-        this.user = user;
-    }
-
-    public String getName () {
-        return name;
-    }
-
-    public void setName (String name) {
-        this.name = name;
-    }
-
-    public String getPhone () {
-        return phone;
-    }
-
-    public void setPhone (String phone) {
-        this.phone = phone;
-    }
-
-    public List<SignOptions> getSignOptions () {
-        return signOptions;
-    }
-
-    public void setSignOptions (List<SignOptions> signOptions) {
-        this.signOptions = signOptions;
-    }
-
-    public Long getActivityId () {
-        return activityId;
-    }
-
-    public void setActivityId (Long activityId) {
-        this.activityId = activityId;
-    }
-
-    public String getActivityName () {
-        return activityName;
-    }
-
-    public void setActivityName (String activityName) {
-        this.activityName = activityName;
-    }
-
-    public LocalDate getActivityStart () {
-        return activityStart;
-    }
-
-    public void setActivityStart (LocalDate activityStart) {
-        this.activityStart = activityStart;
-    }
-
-    public LocalDate getActivityEnd () {
-        return activityEnd;
-    }
-
-    public void setActivityEnd (LocalDate activityEnd) {
-        this.activityEnd = activityEnd;
-    }
-
-    public Activity getActivity () {
-        return activity;
-    }
-
-    public void setActivity (Activity activity) {
-        this.activity = activity;
-    }
-
-    public String getRemark () {
-        return remark;
-    }
-
-    public void setRemark (String remark) {
-        this.remark = remark;
-    }
 }

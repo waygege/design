@@ -2,6 +2,7 @@ package com.ecut.design.Model;
 
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import javax.persistence.*;
 import javax.persistence.Table;
@@ -12,6 +13,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "evant_integral")
+@Data
 public class EventIntegral {
     @Id
     private  Long id;
@@ -26,27 +28,4 @@ public class EventIntegral {
     @ApiModelProperty(value = "integral", required = true, position = 2, example = "10")
     private int integral;
 
-    public Long getId () {
-        return id;
-    }
-
-    public void setId (Long id) {
-        this.id = id;
-    }
-
-    public String getEvent () {
-        return event;
-    }
-
-    public void setEvent (String event) {
-        this.event = event;
-    }
-
-    public int getIntegral () {
-        return integral;
-    }
-
-    public void setIntegral (int integral) {
-        this.integral = integral;
-    }
 }

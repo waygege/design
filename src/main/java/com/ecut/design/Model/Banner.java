@@ -3,6 +3,7 @@ package com.ecut.design.Model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -13,6 +14,7 @@ import java.util.List;
  * */
 @Entity
 @Table(name = "banner")
+@Data
 public class Banner {
         /**
          * 未上架
@@ -118,99 +120,5 @@ public class Banner {
        private  PageExample pageExample;
 
 
-    public Long getId () {
-        return id;
-    }
 
-    public void setId (Long id) {
-        this.id = id;
-    }
-
-    public String getBannerTitle () {
-        return bannerTitle;
-    }
-
-    public void setBannerTitle (String bannerTitle) {
-        this.bannerTitle = bannerTitle;
-    }
-
-    public String getBannerPicture () {
-        return bannerPicture;
-    }
-
-    public void setBannerPicture (String bannerPicture) {
-        this.bannerPicture = bannerPicture;
-    }
-
-    public Long getPosition () {
-        return position;
-    }
-
-    public void setPosition (Long position) {
-        this.position = position;
-    }
-
-    public LocalDateTime getStartTime () {
-        return startTime;
-    }
-
-    public void setStartTime (LocalDateTime startTime) {
-        this.startTime = startTime;
-    }
-
-    public LocalDateTime getEndTime () {
-        return endTime;
-    }
-
-    public void setEndTime (LocalDateTime endTime) {
-        this.endTime = endTime;
-    }
-
-    public String getStatus () {
-        return status;
-    }
-
-    public void setStatus (String status) {
-        this.status = status;
-    }
-
-    public String getJumpLink () {
-        return jumpLink;
-    }
-
-    public void setJumpLink (String jumpLink) {
-        this.jumpLink = jumpLink;
-    }
-
-    public String getBannerCategory () {
-        return bannerCategory;
-    }
-
-    public void setBannerCategory (String bannerCategory) {
-        this.bannerCategory = bannerCategory;
-    }
-
-    public List<User> getUsers () {
-        return users;
-    }
-
-    public void setUsers (List<User> users) {
-        this.users = users;
-    }
-
-    public List<Long> getUserIds () {
-        return userIds;
-    }
-
-    public void setUserIds (List<Long> userIds) {
-        this.userIds = userIds;
-    }
-
-    public PageExample getPageExample () {
-        return pageExample;
-    }
-
-    public void setPageExample (PageExample pageExample) {
-        this.pageExample = pageExample;
-    }
 }

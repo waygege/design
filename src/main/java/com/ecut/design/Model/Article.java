@@ -2,11 +2,13 @@ package com.ecut.design.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "article")
+@Data
 public class Article {
     @Id
     @GeneratedValue
@@ -27,35 +29,4 @@ public class Article {
     @ApiModelProperty(hidden=true)
     private PageExample pageExample;
 
-    public Long getId () {
-        return id;
-    }
-
-    public void setId (Long id) {
-        this.id = id;
-    }
-
-    public String getAgreement () {
-        return agreement;
-    }
-
-    public void setAgreement (String agreement) {
-        this.agreement = agreement;
-    }
-
-    public String getAboutUs () {
-        return aboutUs;
-    }
-
-    public void setAboutUs (String aboutUs) {
-        this.aboutUs = aboutUs;
-    }
-
-    public PageExample getPageExample () {
-        return pageExample;
-    }
-
-    public void setPageExample (PageExample pageExample) {
-        this.pageExample = pageExample;
-    }
-}
+   }

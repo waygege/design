@@ -4,6 +4,7 @@ package com.ecut.design.Model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -14,6 +15,7 @@ import java.util.List;
  * */
 @Entity
 @Table(name = "coupons_details")
+@Data
 public class CouponsDetails {
     /*
      * 未领取
@@ -97,7 +99,6 @@ public class CouponsDetails {
      * */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private String couponDescription;
 
     /*
@@ -105,7 +106,6 @@ public class CouponsDetails {
      * */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private String rules;
 
     /*
@@ -113,14 +113,12 @@ public class CouponsDetails {
      * */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private LocalDateTime startTime;
     /*
      * 优惠卷结束时间
      * */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private LocalDateTime endTime;
 
     /*
@@ -128,150 +126,11 @@ public class CouponsDetails {
      * */
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private List<Restaurant> restaurants;
 
 
     @Transient
     @ApiModelProperty(hidden=true)
-    @JsonIgnore
     private PageExample pageExample;
 
-    public Long getId () {
-        return id;
-    }
-
-    public void setId (Long id) {
-        this.id = id;
-    }
-
-    public String getCouponsCode () {
-        return couponsCode;
-    }
-
-    public void setCouponsCode (String couponsCode) {
-        this.couponsCode = couponsCode;
-    }
-
-    public String getCdKey () {
-        return cdKey;
-    }
-
-    public void setCdKey (String cdKey) {
-        this.cdKey = cdKey;
-    }
-
-    public LocalDateTime getCreateAt () {
-        return createAt;
-    }
-
-    public void setCreateAt (LocalDateTime createAt) {
-        this.createAt = createAt;
-    }
-
-    public String getStatus () {
-        return status;
-    }
-
-    public void setStatus (String status) {
-        this.status = status;
-    }
-
-    public Long getCouponsId () {
-        return couponsId;
-    }
-
-    public void setCouponsId (Long couponsId) {
-        this.couponsId = couponsId;
-    }
-
-    public LocalDateTime getUsedAt () {
-        return usedAt;
-    }
-
-    public void setUsedAt (LocalDateTime usedAt) {
-        this.usedAt = usedAt;
-    }
-
-    public Long getUserId () {
-        return userId;
-    }
-
-    public void setUserId (Long userId) {
-        this.userId = userId;
-    }
-
-    public Long getAmount () {
-        return amount;
-    }
-
-    public void setAmount (Long amount) {
-        this.amount = amount;
-    }
-
-    public List<Long> getUserIds () {
-        return userIds;
-    }
-
-    public void setUserIds (List<Long> userIds) {
-        this.userIds = userIds;
-    }
-
-    public String getCouponsName () {
-        return couponsName;
-    }
-
-    public void setCouponsName (String couponsName) {
-        this.couponsName = couponsName;
-    }
-
-    public String getCouponDescription () {
-        return couponDescription;
-    }
-
-    public void setCouponDescription (String couponDescription) {
-        this.couponDescription = couponDescription;
-    }
-
-    public String getRules () {
-        return rules;
-    }
-
-    public void setRules (String rules) {
-        this.rules = rules;
-    }
-
-    public LocalDateTime getStartTime () {
-        return startTime;
-    }
-
-    public void setStartTime (LocalDateTime startTime) {
-        this.startTime = startTime;
-    }
-
-    public LocalDateTime getEndTime () {
-        return endTime;
-    }
-
-    public void setEndTime (LocalDateTime endTime) {
-        this.endTime = endTime;
-    }
-
-    public List<Restaurant> getRestaurants () {
-        return restaurants;
-    }
-
-    public void setRestaurants (List<Restaurant> restaurants) {
-        this.restaurants = restaurants;
-    }
-
-
-
-    public PageExample getPageExample () {
-        return pageExample;
-    }
-
-    public void setPageExample (PageExample pageExample) {
-        this.pageExample = pageExample;
-    }
-}
+ }
