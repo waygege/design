@@ -1,0 +1,33 @@
+###添加问题
+POST localhost:8080/question/insertQuestion
+Content-Type: application/json
+
+{
+
+  "question": "问题",
+  "replyContent": "回答内容"
+}
+###更新问题
+PUT localhost:8080/question/updateQuestion
+Content-Type: application/json
+
+{
+  "id": 93,
+  "question": "问题",
+  "replyContent": "回答内容"
+}
+###删除问题
+DELETE localhost:8080/question/deleteQuestion?ids=93
+
+###查找所有问题
+GET localhost:8080/question/findAllQuestions
+Content-Type: application/json
+
+{
+    "pageNumber": 1,
+    "pageSize": 10
+
+}
+
+###
+

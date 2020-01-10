@@ -5,7 +5,10 @@ import com.ecut.design.Repository.MemberIntegralRepository;
 import com.ecut.design.Service.MemberIntegralService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class MemberIntegralImpl implements MemberIntegralService {
@@ -17,5 +20,11 @@ public class MemberIntegralImpl implements MemberIntegralService {
     public String updateMemberIntegral(MemberIntegral memberIntegral){
         memberIntegralRepository.save (memberIntegral);
         return "successs";
+    }
+
+    @ApiOperation ("查看所有会员信息")
+    public List<MemberIntegral> findAll(){
+
+        return memberIntegralRepository.findAll ();
     }
 }

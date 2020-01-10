@@ -98,6 +98,11 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>com.github.wenhao</groupId>
+            <artifactId>jpa-spec</artifactId>
+            <version>3.2.5</version>
+        </dependency>
     </dependencies>
 
     <build>

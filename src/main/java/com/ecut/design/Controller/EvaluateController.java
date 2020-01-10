@@ -5,6 +5,7 @@ import com.ecut.design.Service.EvaluateService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,10 +31,10 @@ public class EvaluateController {
         return evaluateService.findEvalutaById (id);
     }
 
-    @ApiOperation ("查看所有评价")
-    @GetMapping("/findEvaluate")
-    public List<Evaluate> findEvaluate(@RequestBody Evaluate evaluate){
+    @ApiOperation ("条件查找评价")
+    @GetMapping("/findEvaluates")
+    public Page<Evaluate> findEvaluates(@RequestBody Evaluate evaluate){
 
-        return evaluateService.findEvaluate (evaluate);
+        return evaluateService.findEvaluates (evaluate);
     }
 }

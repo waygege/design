@@ -13,7 +13,27 @@ Content-Type: application/json
 }
 
 ###查看评价
-GET localhost:8080/evaluate/findEvalutaById?id=90
+GET localhost:8080/evaluate/findEvaluateById?id=90
 
+###条件查询评价
+GET  localhost:8080/evaluate/findEvaluates
+Content-Type: application/json
+
+{
+
+
+  "status": "状态",
+  "content": "评价问题",
+  "stars": 2,
+  "userId": 404322138980352000,
+  "commentEndTime": "2020-01-19 11:41:02",
+  "commentStartTime": "2020-01-09 11:41:02",
+  "restaurantId": 37,
+  "pageExample": {
+    "pageNumber": 1,
+    "pageSize": 10
+  }
+
+}
 ###
 

@@ -1,7 +1,9 @@
 package com.ecut.design.Repository;
 
 import com.ecut.design.Model.Banner;
+import com.ecut.design.Model.Evaluate;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -11,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-public interface BannerRepository extends JpaRepository<Banner,Long> {
+public interface BannerRepository extends JpaRepository<Banner,Long>, JpaSpecificationExecutor<Banner> {
 
     @Modifying
     @Transactional

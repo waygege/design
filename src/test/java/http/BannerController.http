@@ -48,6 +48,7 @@ Content-Type: application/json
 
 {
   "bannerTitle": "标题",
+
   "pageExample": {
     "pageNumber": 1,
     "pageSize": 10,

@@ -5,10 +5,9 @@ import com.ecut.design.Service.MemberIntegralService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/memberIntegral")
@@ -23,5 +22,12 @@ public class MemberIntegralController {
     public String updateMemberIntegral(@RequestBody MemberIntegral memberIntegral){
 
         return memberIntegralService.updateMemberIntegral (memberIntegral);
+    }
+
+    @ApiOperation ("查看所有会员信息")
+    @GetMapping("/findAll")
+    public List<MemberIntegral> findAll(){
+
+        return memberIntegralService.findAll ();
     }
 }

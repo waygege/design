@@ -1,0 +1,10 @@
+###更新会员信息
+PUT localhost:8080/memberIntegral/updateMemberIntegral
+Content-Type: application/json
+
+{
+    "id": 1,
+    "integral": 11,
+    "memberGrade": "普通会员",
+    "money": 100
+}

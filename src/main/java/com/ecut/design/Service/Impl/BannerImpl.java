@@ -3,14 +3,14 @@ package com.ecut.design.Service.Impl;
 import com.ecut.design.Config.util.PageableUtil;
 import com.ecut.design.Model.Banner;
 import com.ecut.design.Model.Dish;
+import com.ecut.design.Model.Evaluate;
 import com.ecut.design.Repository.BannerRepository;
 import com.ecut.design.Service.BannerService;
+import com.github.wenhao.jpa.Specifications;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.*;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 
@@ -79,18 +79,20 @@ public class BannerImpl implements BannerService {
     @ApiOperation ("查询广告")
     @Override
     public Page<Banner> findBanner(Banner banner){
-        ExampleMatcher matcher = ExampleMatcher.matching()
-                .withMatcher ("bannerTitle",ExampleMatcher.GenericPropertyMatchers.contains())
-                .withIgnorePaths("status")
-                //因为id是基本类型所以他默认为0会导致查询为空
-                .withIgnorePaths("id")
-                .withIgnorePaths("bannerPicture")
-                .withIgnorePaths ("position")
-                .withIgnorePaths ("jumpLink");
-        Example<Banner> exampleDish = Example.of(banner ,matcher);
+        Specification<Banner> specification;
+        if (banner.getStartTime ()!=null) {
+           specification = Specifications.<Banner>and ()
+                    .like ("bannerTitle", "%" + banner.getBannerTitle () + "%")
+                    .between ("startTime", banner.getStartTime (), banner.getEndTime ())
+                    .between ("endTime", banner.getStartTime (), banner.getEndTime ())
+                    .build ();
+        }
+        specification = Specifications.<Banner>and ()
+                .like ("bannerTitle", "%" + banner.getBannerTitle () + "%")
+                .build ();
         Pageable pageable=pageableUtil.getPageable (banner.getPageExample ());
 
-        Page<Banner> pageBefor =bannerRepository.findAll (exampleDish,pageable);
+        Page<Banner> pageBefor =bannerRepository.findAll (specification,pageable);
         for (Banner banner1:pageBefor.getContent ()){
             banner1=isValidBanner (banner1);
             bannerRepository.save (banner1);
